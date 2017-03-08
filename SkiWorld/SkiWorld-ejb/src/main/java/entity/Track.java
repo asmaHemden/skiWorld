@@ -19,6 +19,9 @@ public class Track implements Serializable {
 	private String difficulty;
 	private String state;
 	private String lenght;
+	@ManyToOne
+	private SkiStation track;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Track() {

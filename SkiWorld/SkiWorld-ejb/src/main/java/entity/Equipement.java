@@ -3,6 +3,8 @@ package entity;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -22,6 +24,10 @@ public class Equipement implements Serializable {
 	private Integer size;
 	private String color;
 	private float price;
+	@ManyToOne
+	private StationChief chief;
+	@ManyToMany
+	private List<Booking>books;
 	private static final long serialVersionUID = 1L;
 
 	public Equipement() {

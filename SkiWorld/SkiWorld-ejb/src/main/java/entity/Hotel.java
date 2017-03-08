@@ -20,6 +20,8 @@ public class Hotel implements Serializable {
 	private String owner;
 	private long latitude;
 	private long longitude;
+	@ManyToOne
+	private Administrator Admin;
 	private static final long serialVersionUID = 1L;
 
 	public Hotel() {

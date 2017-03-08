@@ -1,6 +1,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -12,6 +14,8 @@ import javax.persistence.*;
 public class Coach extends User implements Serializable {
    
 	private float salary;
+	@OneToMany (mappedBy=("coach"))
+	private List<Course> courses   ; 
 	private static final long serialVersionUID = 1L;
 
 	public Coach() {

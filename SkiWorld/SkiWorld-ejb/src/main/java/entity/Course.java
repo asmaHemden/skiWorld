@@ -5,6 +5,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -25,6 +26,12 @@ public class Course implements Serializable {
 	private Integer capacity;
 	private String category;
 	private Float price;
+	@ManyToOne
+	private Coach coach;
+	@ManyToOne
+	private StationChief chief;
+	@ManyToMany
+	private List<Client>clients;
 	private static final long serialVersionUID = 1L;
 
 	public Course() {

@@ -1,6 +1,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -13,6 +15,13 @@ public class Client extends User implements Serializable {
 
 	
 	private float costs;
+	@ManyToMany
+	private List<Compitition> compitions;
+	@ManyToMany
+	private List<Course>courses ;
+	@OneToMany (mappedBy=("client"))
+	private List<Booking>bookings   ; 
+
 	private static final long serialVersionUID = 1L;
 
 	public Client() {

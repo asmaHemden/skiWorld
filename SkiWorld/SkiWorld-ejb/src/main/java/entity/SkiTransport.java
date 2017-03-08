@@ -3,6 +3,8 @@ package entity;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +20,10 @@ public class SkiTransport implements Serializable {
 	private Integer id;
 	private String type;
 	private String capacity;
+	@ManyToOne
+	private Administrator Admin;
+	@ManyToMany
+	private List<Booking>books;
 	private static final long serialVersionUID = 1L;
 
 	public SkiTransport() {

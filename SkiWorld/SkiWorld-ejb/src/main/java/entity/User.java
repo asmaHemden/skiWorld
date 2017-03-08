@@ -1,4 +1,4 @@
-package entiy;
+package entity;
 
 import java.io.Serializable;
 import java.lang.Integer;

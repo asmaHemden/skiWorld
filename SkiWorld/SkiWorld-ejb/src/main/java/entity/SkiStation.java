@@ -3,6 +3,8 @@ package entity;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -20,6 +22,12 @@ public class SkiStation implements Serializable {
 	private long latitude;
 	private long longitude;
 	private String description;
+	@OneToOne (mappedBy="station")
+	private StationChief chief;
+	@OneToMany (mappedBy=("track"))
+	private List<Track> tracks   ;
+	@OneToMany (mappedBy=("compitition"))
+	private List<Compitition> compititions    ;
 	private static final long serialVersionUID = 1L;
 
 	public SkiStation() {

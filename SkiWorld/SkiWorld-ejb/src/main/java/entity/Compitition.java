@@ -5,6 +5,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -23,6 +25,13 @@ public class Compitition implements Serializable {
 	private Time StartingHour;
 	private Time FinishingHour;
 	private Integer capacity;
+	@ManyToOne
+	private Administrator Admin;
+	@ManyToOne
+	private SkiStation compitition;
+	@ManyToMany
+	private List<Client>clients;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Compitition() {

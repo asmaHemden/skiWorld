@@ -1,6 +1,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -10,8 +12,16 @@ import javax.persistence.*;
 @Entity
 
 public class Administrator extends User implements Serializable {
-
-	
+	@OneToMany (mappedBy=("Admin"))
+	private List<StationChief> chiefs;
+	@OneToMany (mappedBy=("Admin"))
+	private List<Restaurant> restaurants; 
+	@OneToMany (mappedBy=("Admin"))
+	private List<Hotel> hotels ; 
+	@OneToMany (mappedBy=("Admin"))
+	private List<SkiTransport> transports  ; 
+	@OneToMany (mappedBy=("Admin"))
+	private List<Compitition> compitions   ; 
 	private static final long serialVersionUID = 1L;
 
 	public Administrator() {

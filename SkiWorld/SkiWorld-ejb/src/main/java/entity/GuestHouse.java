@@ -2,6 +2,8 @@ package entity;
 
 import java.io.Serializable;
 import java.lang.Integer;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +20,10 @@ public class GuestHouse implements Serializable {
 	private long latitude;
 	private long longitude;
 	private Integer NbrRoom;
+	@ManyToOne
+	private StationChief chief;
+	@ManyToMany
+	private List<Booking>books;
 	private static final long serialVersionUID = 1L;
 
 	public GuestHouse() {

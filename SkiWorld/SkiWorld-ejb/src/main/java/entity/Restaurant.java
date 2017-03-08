@@ -20,6 +20,8 @@ public class Restaurant implements Serializable {
 	private String label;
 	private long latitude;
 	private long longitude;
+	@ManyToOne
+	private Administrator Admin;
 	private static final long serialVersionUID = 1L;
 
 	public Restaurant() {
