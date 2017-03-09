@@ -20,6 +20,9 @@ public class GuestHouse implements Serializable {
 	private long latitude;
 	private long longitude;
 	private Integer NbrRoom;
+	private float price;
+	private String photo;
+	private String description;
 	@ManyToOne
 	private StationChief chief;
 	@OneToMany(mappedBy="guestHouse")
