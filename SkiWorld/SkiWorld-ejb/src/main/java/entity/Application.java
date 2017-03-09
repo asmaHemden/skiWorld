@@ -3,20 +3,22 @@ package entity;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+import javax.persistence.EmbeddedId;
+
 /**
- * Entity implementation class for Entity: Application
+ * Entity implementation class for Entity: Participation
  *
  */
 @Entity
 
 public class Application implements Serializable {
 	@EmbeddedId
-	private ParticipationID participationId;
+	private ApplicationID applictionid;
 	
 	private Date date;
 	@ManyToOne
-	@JoinColumn(name = "idCompitition", referencedColumnName = "id", updatable = false, insertable = false)
-	private Compitition compitition;
+	@JoinColumn(name = "idcompitition", referencedColumnName = "id", updatable = false, insertable = false)
+	private Competition competition;
 	
 	@ManyToOne
 	@JoinColumn(name = "idClient", referencedColumnName = "id", updatable = false, insertable = false)

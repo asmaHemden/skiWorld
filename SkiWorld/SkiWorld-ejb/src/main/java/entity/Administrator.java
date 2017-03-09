@@ -21,7 +21,7 @@ public class Administrator extends User implements Serializable {
 	@OneToMany (mappedBy=("Admin"))
 	private List<SkiTransport> transports  ; 
 	@OneToMany (mappedBy=("Admin"))
-	private List<Compitition> compitions   ; 
+	private List<Competition> compitions   ; 
 	private static final long serialVersionUID = 1L;
 
 	public Administrator() {

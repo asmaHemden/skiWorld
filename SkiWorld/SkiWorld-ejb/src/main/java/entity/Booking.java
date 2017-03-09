@@ -5,7 +5,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.Date;
 import java.util.List;
-
+import javax.persistence.EmbeddedId;
 import javax.persistence.*;
 
 /**
@@ -17,52 +17,87 @@ import javax.persistence.*;
 public class Booking implements Serializable {
 
 	   
-	@Id
-	private Integer id;
+	@EmbeddedId 
+	private BookingID bookingid;
 	private String license;
 	private Date StartingDate;
 	private Date FinishingDate;
-	@ManyToOne
-	private Client client;
-	@ManyToMany
-	private List<Equipement>equipements;
-	@ManyToMany
-	private List<SkiTransport>transports;
+	private Integer NbrBooking;
 	
-	@ManyToMany
-	private List<GuestHouse>houses;
+	@ManyToOne
+	@JoinColumn(name = "idequpement", referencedColumnName = "id", updatable = false, insertable = false)
+	private Equipement equipement;
+	
+	@ManyToOne
+	@JoinColumn(name = "idClient", referencedColumnName = "id", updatable = false, insertable = false)
+	private Client client;
+
 	private static final long serialVersionUID = 1L;
 
 	public Booking() {
 		super();
-	}   
-	public Integer getId() {
-		return this.id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}   
+	public Booking( String license, Date startingDate, Date finishingDate,Integer NbrBooking, Equipement equipement,
+			Client client) {
+		super();
+		this.bookingid = new BookingID(equipement.getId(), client.getId());
+		this.license = license;
+		StartingDate = startingDate;
+		FinishingDate = finishingDate;
+		this.NbrBooking=NbrBooking;
+		this.equipement = equipement;
+		this.client = client;
+	}
+
+	public Integer getNbrBooking() {
+		return NbrBooking;
+	}
+
+	public void setNbrBooking(Integer nbrBooking) {
+		NbrBooking = nbrBooking;
+	}
+
 	public String getLicense() {
-		return this.license;
+		return license;
 	}
 
 	public void setLicense(String license) {
 		this.license = license;
-	}   
+	}
+
 	public Date getStartingDate() {
-		return this.StartingDate;
+		return StartingDate;
 	}
 
-	public void setStartingDate(Date StartingDate) {
-		this.StartingDate = StartingDate;
-	}   
+	public void setStartingDate(Date startingDate) {
+		StartingDate = startingDate;
+	}
+
 	public Date getFinishingDate() {
-		return this.FinishingDate;
+		return FinishingDate;
 	}
 
-	public void setFinishingDate(Date FinishingDate) {
-		this.FinishingDate = FinishingDate;
+	public void setFinishingDate(Date finishingDate) {
+		FinishingDate = finishingDate;
 	}
-   
+
+	public Equipement getEquipement() {
+		return equipement;
+	}
+
+	public void setEquipement(Equipement equipement) {
+		this.equipement = equipement;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}   
+	
+	
+	
 }

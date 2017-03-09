@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.sun.mail.handlers.image_gif;
+
 /**
  * Entity implementation class for Entity: Equipement
  *
@@ -24,10 +26,13 @@ public class Equipement implements Serializable {
 	private Integer size;
 	private String color;
 	private float price;
+	
+	
+	
 	@ManyToOne
 	private StationChief chief;
-	@ManyToMany
-	private List<Booking>books;
+	@OneToMany(mappedBy="equipement")
+	private List<Booking> bookings ;
 	private static final long serialVersionUID = 1L;
 
 	public Equipement() {

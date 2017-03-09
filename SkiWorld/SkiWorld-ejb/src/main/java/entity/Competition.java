@@ -10,12 +10,12 @@ import java.util.List;
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: Compitition
+ * Entity implementation class for Entity: Competition
  *
  */
 @Entity
 
-public class Compitition implements Serializable {
+public class Competition implements Serializable {
 
 	   
 	@Id
@@ -29,12 +29,12 @@ public class Compitition implements Serializable {
 	private Administrator Admin;
 	@ManyToOne
 	private SkiStation compitition;
-	@ManyToMany
-	private List<Client>clients;
+	@OneToMany(mappedBy="competition")
+	private List<Application>applications;
 	
 	private static final long serialVersionUID = 1L;
 
-	public Compitition() {
+	public Competition() {
 		super();
 	}   
 	public Integer getId() {

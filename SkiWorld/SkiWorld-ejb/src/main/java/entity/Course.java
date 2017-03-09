@@ -30,8 +30,8 @@ public class Course implements Serializable {
 	private Coach coach;
 	@ManyToOne
 	private StationChief chief;
-	@ManyToMany
-	private List<Client>clients;
+	@OneToMany(mappedBy="course")
+	private List<Participation>participations;
 	private static final long serialVersionUID = 1L;
 
 	public Course() {

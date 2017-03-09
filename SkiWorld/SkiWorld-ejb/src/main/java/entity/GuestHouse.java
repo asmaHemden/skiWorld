@@ -22,8 +22,8 @@ public class GuestHouse implements Serializable {
 	private Integer NbrRoom;
 	@ManyToOne
 	private StationChief chief;
-	@ManyToMany
-	private List<Booking>books;
+	@OneToMany(mappedBy="guestHouse")
+	private List<Contract> contracts ;
 	private static final long serialVersionUID = 1L;
 
 	public GuestHouse() {

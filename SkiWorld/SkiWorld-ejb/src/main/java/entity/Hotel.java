@@ -20,6 +20,7 @@ public class Hotel implements Serializable {
 	private String owner;
 	private long latitude;
 	private long longitude;
+	private Integer StarRating;
 	@ManyToOne
 	private Administrator Admin;
 	private static final long serialVersionUID = 1L;
@@ -61,6 +62,12 @@ public class Hotel implements Serializable {
 
 	public void setLongitude(long longitude) {
 		this.longitude = longitude;
+	}
+	public Integer getStarRating() {
+		return StarRating;
+	}
+	public void setStarRating(Integer starRating) {
+		StarRating = starRating;
 	}
    
 }

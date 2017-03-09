@@ -1,11 +1,11 @@
 package entity;
 
 import java.util.Date;
-
+import java.io.Serializable;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class ApplicationID {
+public class ApplicationID implements Serializable{
 	private Integer idCompitition;
 	private Integer idClient;
 	private Date dateOfApplication;

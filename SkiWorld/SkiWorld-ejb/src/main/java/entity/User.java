@@ -20,6 +20,7 @@ public class User implements Serializable {
 	private String prenom;
 	private String email;
 	private String passwold;
+	private long CIN;
 	private static final long serialVersionUID = 1L;
 
 	public User() {
@@ -59,6 +60,12 @@ public class User implements Serializable {
 
 	public void setPasswold(String passwold) {
 		this.passwold = passwold;
+	}
+	public long getCIN() {
+		return CIN;
+	}
+	public void setCIN(long cIN) {
+		CIN = cIN;
 	}
    
 }

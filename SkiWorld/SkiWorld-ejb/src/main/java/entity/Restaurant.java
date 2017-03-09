@@ -20,6 +20,7 @@ public class Restaurant implements Serializable {
 	private String label;
 	private long latitude;
 	private long longitude;
+	private String specialty;
 	@ManyToOne
 	private Administrator Admin;
 	private static final long serialVersionUID = 1L;
@@ -61,6 +62,12 @@ public class Restaurant implements Serializable {
 
 	public void setLongitude(long longitude) {
 		this.longitude = longitude;
+	}
+	public String getSpecialty() {
+		return specialty;
+	}
+	public void setSpecialty(String specialty) {
+		this.specialty = specialty;
 	}
    
 }

@@ -23,7 +23,7 @@ public class SkiTransport implements Serializable {
 	@ManyToOne
 	private Administrator Admin;
 	@ManyToMany
-	private List<Booking>books;
+	private List<Client> clients ;
 	private static final long serialVersionUID = 1L;
 
 	public SkiTransport() {

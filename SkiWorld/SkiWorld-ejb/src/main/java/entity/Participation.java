@@ -15,7 +15,7 @@ public class Participation implements Serializable {
 	@EmbeddedId
 	private ParticipationID participationId;
 	
-	private Date date;
+
 	@ManyToOne
 	@JoinColumn(name = "idCourse", referencedColumnName = "id", updatable = false, insertable = false)
 	private Course course;
@@ -28,12 +28,14 @@ public class Participation implements Serializable {
 	public Participation() {
 		super();
 	}   
-	public Date getDate() {
-		return this.date;
+	
+	public Participation(  Course course, Client client) {
+		super();
+		this.participationId = new ParticipationID(course.getId(), client.getId());
+
+		this.course = course;
+		this.client = client;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
    
 }

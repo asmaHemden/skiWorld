@@ -13,7 +13,7 @@ public class ParticipationID implements Serializable{
 	public ParticipationID() {
 		// TODO Auto-generated constructor stub
 	}
-	public ParticipationID(Integer idCourse, Integer idClient, Date dateOfParticipation) {
+	public ParticipationID(Integer idCourse, Integer idClient) {
 		super();
 		this.idCourse = idCourse;
 		this.idClient = idClient;

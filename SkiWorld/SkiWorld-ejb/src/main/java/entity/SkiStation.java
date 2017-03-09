@@ -27,7 +27,7 @@ public class SkiStation implements Serializable {
 	@OneToMany (mappedBy=("track"))
 	private List<Track> tracks   ;
 	@OneToMany (mappedBy=("compitition"))
-	private List<Compitition> compititions    ;
+	private List<Competition> competitions    ;
 	private static final long serialVersionUID = 1L;
 
 	public SkiStation() {

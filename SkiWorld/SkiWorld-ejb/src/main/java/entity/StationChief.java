@@ -17,6 +17,8 @@ public class StationChief extends User implements Serializable {
 	@OneToMany (mappedBy=("chief"))
 	private List<Course> courses   ; 
 	@OneToMany (mappedBy=("chief"))
+	private List<Deal> deals    ; 
+	@OneToMany (mappedBy=("chief"))
 	private List<GuestHouse> houses    ; 
 	@OneToMany (mappedBy=("chief"))
 	private List<Equipement> equipements   ; 

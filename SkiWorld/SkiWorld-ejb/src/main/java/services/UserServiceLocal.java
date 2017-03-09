@@ -7,5 +7,5 @@ import entity.User;
 @Local
 public interface UserServiceLocal {
 
-	public void addCoach ( User u);
+	 boolean addCoach ( User u);
 }

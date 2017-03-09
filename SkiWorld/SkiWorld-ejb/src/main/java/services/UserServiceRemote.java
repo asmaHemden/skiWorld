@@ -7,5 +7,5 @@ import entity.User;
 @Remote
 public interface UserServiceRemote {
 
-	public void addCoach ( User u);
+	 boolean addCoach ( User u);
 }
