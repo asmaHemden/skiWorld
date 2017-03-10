@@ -17,6 +17,8 @@ public class SkiStation implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private Integer id;
 	private String label;
 	private long latitude;
@@ -26,7 +28,7 @@ public class SkiStation implements Serializable {
 	private StationChief chief;
 	@OneToMany (mappedBy=("track"))
 	private List<Track> tracks   ;
-	@OneToMany (mappedBy=("compitition"))
+	@OneToMany 
 	private List<Competition> competitions    ;
 	private static final long serialVersionUID = 1L;
 

@@ -28,6 +28,8 @@ public class Client extends User implements Serializable {
 	private List<Contract> contracts ;
 	@OneToMany(mappedBy="client")
 	private List<Reservation> reservations ;
+	@OneToMany(mappedBy="client")
+	private List<Complaint> complaints ;
 
 	private static final long serialVersionUID = 1L;
 
