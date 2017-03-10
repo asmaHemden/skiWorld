@@ -15,6 +15,13 @@ public class addGuest {
 		Context context =new InitialContext();
 		GuestHouseServicesRemote proxy = (GuestHouseServicesRemote) context.lookup("SkiWorld-ear/SkiWorld-ejb/GuestHouseServices!services.GuestHouseServicesRemote");
 GuestHouse G = new GuestHouse();
+G.setNbrRoom(5);
+G.setLongitude(555555555);
+G.setLatitude(8888);
+G.setPrice(500);
+G.setDescription("maison bien équipé ");
+proxy.addGuestHouse(G);
+
 	}
 
 }
