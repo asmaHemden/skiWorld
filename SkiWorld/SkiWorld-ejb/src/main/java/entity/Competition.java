@@ -19,16 +19,21 @@ public class Competition implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
 	private String type;
+	@Temporal(TemporalType.DATE)
 	private Date date;
-	private Time StartingHour;
-	private Time FinishingHour;
-	private Integer capacity;
+	 private Integer capacity;
+	 @Temporal(TemporalType.TIME)
+       private Date StartingHour;
+	   private Date FinishingHour;
+	  
 	@ManyToOne
 	private Administrator Admin;
 	@ManyToOne
-	private SkiStation compitition;
+	private SkiStation station;
 	@OneToMany(mappedBy="competition")
 	private List<Application>applications;
 	
@@ -58,14 +63,14 @@ public class Competition implements Serializable {
 	public void setDate(Date date) {
 		this.date = date;
 	}   
-	public Time getStartingHour() {
+	public Date getStartingHour() {
 		return this.StartingHour;
 	}
 
 	public void setStartingHour(Time StartingHour) {
 		this.StartingHour = StartingHour;
 	}   
-	public Time getFinishingHour() {
+	public Date getFinishingHour() {
 		return this.FinishingHour;
 	}
 
