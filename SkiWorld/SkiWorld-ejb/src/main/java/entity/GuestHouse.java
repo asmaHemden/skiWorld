@@ -14,8 +14,8 @@ import javax.persistence.*;
 
 public class GuestHouse implements Serializable {
 
+	   
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private long latitude;
 	private long longitude;
@@ -25,38 +25,34 @@ public class GuestHouse implements Serializable {
 	private String description;
 	@ManyToOne
 	private StationChief chief;
-	@OneToMany(mappedBy = "guestHouse")
-	private List<Contract> contracts;
+	@OneToMany(mappedBy="guestHouse")
+	private List<Contract> contracts ;
 	private static final long serialVersionUID = 1L;
 
 	public GuestHouse() {
 		super();
-	}
-
+	}   
 	public Integer getId() {
 		return this.id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
+	}   
 	public long getLatitude() {
 		return this.latitude;
 	}
 
 	public void setLatitude(long latitude) {
 		this.latitude = latitude;
-	}
-
+	}   
 	public long getLongitude() {
 		return this.longitude;
 	}
 
 	public void setLongitude(long longitude) {
 		this.longitude = longitude;
-	}
-
+	}   
 	public Integer getNbrRoom() {
 		return this.NbrRoom;
 	}
@@ -64,21 +60,5 @@ public class GuestHouse implements Serializable {
 	public void setNbrRoom(Integer NbrRoom) {
 		this.NbrRoom = NbrRoom;
 	}
-
-	public float getPrice() {
-		return price;
-	}
-
-	public void setPrice(float price) {
-		this.price = price;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
+   
 }

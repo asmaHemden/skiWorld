@@ -3,29 +3,26 @@ package entity;
 import java.util.Date;
 import java.io.Serializable;
 import javax.persistence.Embeddable;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Embeddable
 public class ApplicationID implements Serializable{
-	private Integer idCompetition;
+	private Integer idCompitition;
 	private Integer idClient;
-	@Temporal(TemporalType.DATE)
 	private Date dateOfApplication;
 	public ApplicationID() {
 		// TODO Auto-generated constructor stub
 	}
-	public ApplicationID(Integer idCompetition, Integer idClient, Date dateOfApplication) {
+	public ApplicationID(Integer idCompitition, Integer idClient, Date dateOfApplication) {
 		super();
-		this.idCompetition = idCompetition;
+		this.idCompitition = idCompitition;
 		this.idClient = idClient;
 		this.dateOfApplication = dateOfApplication;
 	}
-	public Integer getIdCompetition() {
-		return idCompetition;
+	public Integer getIdCompitition() {
+		return idCompitition;
 	}
-	public void setIdCompetition(Integer idCompetition) {
-		this.idCompetition = idCompetition;
+	public void setIdCompitition(Integer idCompitition) {
+		this.idCompitition = idCompitition;
 	}
 	public Integer getIdClient() {
 		return idClient;
@@ -45,7 +42,7 @@ public class ApplicationID implements Serializable{
 		int result = 1;
 		result = prime * result + ((dateOfApplication == null) ? 0 : dateOfApplication.hashCode());
 		result = prime * result + ((idClient == null) ? 0 : idClient.hashCode());
-		result = prime * result + ((idCompetition == null) ? 0 : idCompetition.hashCode());
+		result = prime * result + ((idCompitition == null) ? 0 : idCompitition.hashCode());
 		return result;
 	}
 	@Override
@@ -67,13 +64,12 @@ public class ApplicationID implements Serializable{
 				return false;
 		} else if (!idClient.equals(other.idClient))
 			return false;
-		if (idCompetition == null) {
-			if (other.idCompetition != null)
+		if (idCompitition == null) {
+			if (other.idCompitition != null)
 				return false;
-		} else if (!idCompetition.equals(other.idCompetition))
+		} else if (!idCompitition.equals(other.idCompitition))
 			return false;
 		return true;
 	}
-	
 
 }

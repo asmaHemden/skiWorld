@@ -4,33 +4,6 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="SkiWorld-ejb">
 		<jta-data-source>java:jboss/datasources/skiworld</jta-data-source>
-		<class>entity.Administrator</class>
-		<class>entity.Application</class>
-		<class>entity.ApplicationID</class>
-		<class>entity.Booking</class>
-		<class>entity.BookingID</class>
-		<class>entity.Client</class>
-		<class>entity.Coach</class>
-		<class>entity.Competition</class>
-		<class>entity.Complaint</class>
-		<class>entity.ComplaintID</class>
-		<class>entity.Contract</class>
-		<class>entity.ContractID</class>
-		<class>entity.Course</class>
-		<class>entity.Deal</class>
-		<class>entity.Equipement</class>
-		<class>entity.GuestHouse</class>
-		<class>entity.Hotel</class>
-		<class>entity.Participation</class>
-		<class>entity.ParticipationID</class>
-		<class>entity.Reservation</class>
-		<class>entity.ReservationID</class>
-		<class>entity.Restaurant</class>
-		<class>entity.SkiStation</class>
-		<class>entity.SkiTransport</class>
-		<class>entity.StationChief</class>
-		<class>entity.Track</class>
-		<class>entity.User</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 		</properties>

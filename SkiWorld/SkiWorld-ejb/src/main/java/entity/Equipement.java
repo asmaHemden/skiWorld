@@ -19,11 +19,12 @@ public class Equipement implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String liscense;
 	private String label;
 	private String gender;
-	private Integer size;
+	private String size;
 	private String color;
 	private float price;
 	
@@ -66,11 +67,11 @@ public class Equipement implements Serializable {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}   
-	public Integer getSize() {
+	public String getSize() {
 		return this.size;
 	}
 
-	public void setSize(Integer size) {
+	public void setSize(String size) {
 		this.size = size;
 	}   
 	public String getColor() {

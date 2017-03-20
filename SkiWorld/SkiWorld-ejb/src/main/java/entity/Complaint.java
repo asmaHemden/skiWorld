@@ -15,7 +15,7 @@ public class Complaint implements Serializable {
 	private String topic;
 	private String status;
 	@ManyToOne
-	@JoinColumn(name = "idstation", referencedColumnName = "id", updatable = false, insertable = false)
+	@JoinColumn(name = "idcomplaint", referencedColumnName = "id", updatable = false, insertable = false)
 	private Competition complaint;
 	
 	@ManyToOne
@@ -28,14 +28,53 @@ public class Complaint implements Serializable {
 		super();
 	}
 
-	public Complaint(ComplaintID complaintID, String topic, String status) {
+	public Complaint(ComplaintID complaintID, String topic, String status, Competition complaint, Client client) {
 		super();
 		this.complaintID = complaintID;
 		this.topic = topic;
 		this.status = status;
+		this.complaint = complaint;
+		this.client = client;
 	}
 
-	
-	
-
+	public ComplaintID getComplaintID() {
+		return complaintID;
 	}
+
+	public void setComplaintID(ComplaintID complaintID) {
+		this.complaintID = complaintID;
+	}
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Competition getComplaint() {
+		return complaint;
+	}
+
+	public void setComplaint(Competition complaint) {
+		this.complaint = complaint;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+   
+}
